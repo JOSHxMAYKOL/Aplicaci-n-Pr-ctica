@@ -32,3 +32,38 @@ Para usar este modelo en aplicaciones web con TensorflowJS, es necesario convert
 
 ### ¿Qué es GitHub y cómo se puede versionar un proyecto allí?
 GitHub es una plataforma de alojamiento de código que utiliza el sistema de control de versiones Git para administrar proyectos. Permite a los desarrolladores guardar el historial de cambios, colaborar en equipo, gestionar ramas y realizar despliegues. Para versionar un proyecto en GitHub, se inicializa un repositorio Git localmente, se agregan los archivos, se realizan commits con mensajes claros y se sube el proyecto a un repositorio remoto en GitHub. Esto facilita mantener una copia segura, acceder desde cualquier lugar y mostrar el proyecto públicamente o en privado.
+Aplicación Práctica
+
+### Entrenamiento del modelo
+El modelo fue entrenado usando la plataforma Google Teachable Machine con imágenes capturadas mediante webcam o subidas. Se definieron 5 clases:
+
+celular
+
+teclado
+
+mouse
+
+lentes
+
+nada (sin objeto visible)
+
+Cada clase contiene al menos 20 imágenes variadas para mejorar la precisión del modelo. El entrenamiento se realizó directamente en la nube desde la plataforma, logrando un modelo que puede identificar estos objetos en tiempo real.
+Exportación y uso del modelo
+Luego de entrenar, el modelo se exportó en formato compatible con TensorflowJS. Los archivos resultantes (model.json y archivos .bin) se colocaron en la carpeta /model del proyecto web.
+
+En la página web, se utiliza la función tf.loadLayersModel() para cargar el modelo. El video de la webcam se procesa continuamente para capturar frames, que se redimensionan y normalizan antes de pasar al modelo para obtener la predicción en tiempo real.
+
+### Desarrollo web
+La aplicación web está construida con HTML, CSS y JavaScript. La interfaz es amigable y atractiva, con colores vibrantes y animaciones que mejoran la experiencia del usuario.
+
+Los archivos principales son:
+
+index.html: estructura de la página.
+
+styles.css: estilos y animaciones.
+
+app.js: lógica para cargar el modelo, capturar video y mostrar predicciones.
+
+model/: carpeta con el modelo exportado.
+
+El botón "Iniciar Clasificación" activa la webcam y comienza la predicción continua.

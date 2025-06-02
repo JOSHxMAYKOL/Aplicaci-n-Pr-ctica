@@ -26,5 +26,9 @@ Después de entrenar un modelo en Teachable Machine, se puede exportar para uso 
 
 El archivo con extensión `.h5` es un formato estándar para almacenar modelos entrenados en Keras, que incluye tanto la arquitectura del modelo como sus pesos entrenados. En Python, después de entrenar un modelo con Keras, se guarda con el método:
 
-```python
+``python
 model.save('modelo.h5')
+Para usar este modelo en aplicaciones web con TensorflowJS, es necesario convertirlo usando la herramienta tensorflowjs_converter.
+
+### ¿Qué es GitHub y cómo se puede versionar un proyecto allí?
+GitHub es una plataforma de alojamiento de código que utiliza el sistema de control de versiones Git para administrar proyectos. Permite a los desarrolladores guardar el historial de cambios, colaborar en equipo, gestionar ramas y realizar despliegues. Para versionar un proyecto en GitHub, se inicializa un repositorio Git localmente, se agregan los archivos, se realizan commits con mensajes claros y se sube el proyecto a un repositorio remoto en GitHub. Esto facilita mantener una copia segura, acceder desde cualquier lugar y mostrar el proyecto públicamente o en privado.
